@@ -11,7 +11,7 @@ export class MessageService {
   {
 
     this.messages.push(messages);// add messages array
- 
+
   }
   clear()
   {
