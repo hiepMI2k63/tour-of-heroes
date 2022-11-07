@@ -21,13 +21,23 @@ export class HeroDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
+    console.log("in detail");
+
     this.getHero();
   }
 
+ // return void cha hop ly thuc ra return hero
   getHero(): void {
+
+    // Request// get id product
     const id = Number(this.route.snapshot.paramMap.get('id'));
+    console.log( this.route.snapshot);
+
+    // find product in database
     this.heroService.getHero(id)
       .subscribe(hero => this.hero = hero);
+      console.log(this.hero);
   }
 
   goBack(): void {
