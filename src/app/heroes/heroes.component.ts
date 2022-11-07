@@ -3,6 +3,7 @@ import { Hero } from '../common/hero';
 import { HeroService } from '../../service/hero/hero.service';
 import { HEROES } from '../common/mock-heroes';
 import { MessageService } from 'src/service/message/message.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-heroes',
@@ -21,7 +22,11 @@ export class HeroesComponent implements OnInit {
   }
 
   // DJ via contructor
-  constructor(private heroService:HeroService, private messageService:MessageService ) { }
+  constructor(private heroService:HeroService, 
+    private route:ActivatedRoute,
+    private location:Location,
+              private messageService:MessageService,
+     ) { }
 
   getHeroes(): void{
 
